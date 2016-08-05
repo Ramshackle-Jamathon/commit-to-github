@@ -1,6 +1,6 @@
 {
   "name": "commit-to-github",
-  "description": "make ",
+  "description": "make commits to github without git, perfect for AWS lambda",
   "version": "0.1.0",
   "repository": "github.com:Ramshackle-Jamathon/commit-to-github.git",
   "author": "Joseph Van Drunen <josephvandrunen@gmail.com>",
