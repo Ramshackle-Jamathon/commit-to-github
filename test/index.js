@@ -43,7 +43,7 @@ describe("general", function() {
 		return commitToGithub({
 			user: "Ramshackle-Jamathon",
 			repo: "repo-that-will-never-exist",
-			files: [{name: "", content: ""}]
+			files: [{path: "", content: ""}]
 		}).catch(error => {
 			error.should.exist;
 		});
@@ -53,7 +53,7 @@ describe("general", function() {
 		return commitToGithub({
 			user: "Ramshackle-Jamathon",
 			repo: "repo-that-will-never-exist",
-			files: [{name: "", content: ""}],
+			files: [{path: "", content: ""}],
 			fullyQualifiedRef : "badbranch"
 		}).catch(error => {
 			error.should.exist;
@@ -64,7 +64,7 @@ describe("general", function() {
 		return commitToGithub({
 			user: "Ramshackle-Jamathon",
 			repo: "commit-to-github",
-			files: [{name: "", content: ""}],
+			files: [{path: "", content: ""}],
 			fullyQualifiedRef : "heads/master",
 			token: "invalid token"
 		}).catch(error => {

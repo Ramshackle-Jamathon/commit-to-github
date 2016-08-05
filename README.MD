@@ -15,8 +15,8 @@ commitToGithub({
 	repo: "commit-to-github",
 	token: "<a-github-oauth-token>",
 	files: [
-		{name: "foo.txt", content: "nice words!"},
-		{name: "bar.txt", content: "you're the best!"},
+		{path: "foo.txt", content: "nice words!"},
+		{path: "sick-folder/bar.txt", content: "you're the best!"},
 	],
 	fullyQualifiedRef : "heads/master", //optional default = "heads/dev"
 	forceUpdate: true, //optional default = false

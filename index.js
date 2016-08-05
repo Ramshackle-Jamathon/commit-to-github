@@ -23,9 +23,9 @@ var createTree = function (data){
 
 		var files = [];
 		data.files.forEach((file) => {
-			if(typeof file.name === "string" && typeof file.content === "string"){
+			if(typeof file.path === "string" && typeof file.content === "string"){
 				files.push({
-					path: file.name,
+					path: file.path,
 					mode: "100644",
 					type: "blob",
 					content: file.content
