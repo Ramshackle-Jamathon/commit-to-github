@@ -24,7 +24,7 @@ commitToGithub({
 }).then(function(res){
 	// success!
 }).catch(function(err){
-	// oh no! something went wronge
+	// oh no! something went wrong
 })
 ```
 
