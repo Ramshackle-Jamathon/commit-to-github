@@ -22,7 +22,7 @@ var createTree = function (data){
 		console.log("Creating tree...");
 
 		var files = [];
-		data.files.foreach((file) => {
+		data.files.forEach((file) => {
 			if(typeof file.name === "string" && typeof file.content === "string"){
 				files.push({
 					path: file.name,
@@ -88,7 +88,7 @@ var updateRefrence = function (data){
 
 module.exports = function(opts) {
 	opts = opts || {};
-	if (!opts.user || !opts.repo || !opts.files){
+	if (!opts.user || !opts.repo || !opts.files || !opts.files.length){
 		return "";
 	}
 	var data = {};

@@ -20,7 +20,20 @@ describe("general", function() {
 		});
 		d.should.equal("");
 
+		var d = commitToGithub({
+			token  : ""
+		});
+		d.should.equal("");
+
 		var e = commitToGithub({
+			files : []
+		});
+		e.should.equal("");
+
+		var e = commitToGithub({
+			user : "",
+			repo  : "",
+			token  : "",
 			files : []
 		});
 		e.should.equal("");
@@ -30,19 +43,32 @@ describe("general", function() {
 		return commitToGithub({
 			user: "Ramshackle-Jamathon",
 			repo: "repo-that-will-never-exist",
-			files: []
+			files: [{name: "", content: ""}]
 		}).catch(error => {
-			error.status.should.equal("Not Found");
+			error.should.exist;
 		});
 	});
 
-	it("repo not found", function() {
+	it("ref not found", function() {
+		return commitToGithub({
+			user: "Ramshackle-Jamathon",
+			repo: "repo-that-will-never-exist",
+			files: [{name: "", content: ""}],
+			fullyQualifiedRef : "badbranch"
+		}).catch(error => {
+			error.should.exist;
+		});
+	});
+
+	it("invalid token", function() {
 		return commitToGithub({
 			user: "Ramshackle-Jamathon",
 			repo: "commit-to-github",
-			files: []
+			files: [{name: "", content: ""}],
+			fullyQualifiedRef : "heads/master",
+			token: "invalid token"
 		}).catch(error => {
-			error.status.should.equal("Not Found");
+			error.should.exist;
 		});
 	});
 });
