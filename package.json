@@ -1,7 +1,7 @@
 {
   "name": "commit-to-github",
   "description": "make ",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "repository": "github.com:Ramshackle-Jamathon/commit-to-github.git",
   "author": "Joseph Van Drunen <josephvandrunen@gmail.com>",
   "keywords": [
