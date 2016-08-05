@@ -9,7 +9,7 @@ $ npm install commit-to-github
 
 ## Example
 
-```
+```javascript
 commitToGithub({
 	user: "Ramshackle-Jamathon",
 	repo: "commit-to-github",
