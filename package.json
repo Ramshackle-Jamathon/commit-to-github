@@ -15,8 +15,8 @@
     "test": "mocha --require should"
   },
   "devDependencies": {
-    "mocha": "^2.5.3",
-    "should": "^9.0.2"
+    "mocha": "^3.0.2",
+    "should": "^11.0.0"
   },
   "dependencies": {
     "github": "^2.4.0"
