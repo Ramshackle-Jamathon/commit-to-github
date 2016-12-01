@@ -19,6 +19,6 @@
     "should": "^11.1.0"
   },
   "dependencies": {
-    "github": "^6.0.3"
+    "github": "^7.0.0"
   }
 }
