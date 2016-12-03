@@ -1,4 +1,4 @@
-var assert = require("assert");
+var should = require("should");
 var commitToGithub = require("..")
 
 describe("general", function() {

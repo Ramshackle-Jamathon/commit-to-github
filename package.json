@@ -12,13 +12,15 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require should"
+    "test": "eslint index.js example/ test/ && mocha test/"
   },
   "devDependencies": {
     "mocha": "^3.0.2",
-    "should": "^11.1.0"
+    "should": "^11.1.0",
+    "eslint": "^3.10.2"
   },
   "dependencies": {
+    "debug": "^2.3.3",
     "github": "^7.0.0"
   }
 }

@@ -1,0 +1,59 @@
+{
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module"
+    },
+    "env": {
+        "node": true,
+        "mocha": true,
+        "es6": true
+    },
+	"rules": {
+		// warnings
+		"no-debugger": 1,
+		"no-empty": 1,
+		"no-invalid-regexp": 1,
+		"radix": 1,
+		"no-warning-comments": 1,
+		"no-unused-expressions": 1,
+		"no-native-reassign": 1,
+		"no-fallthrough": 1,
+
+		// errors
+		"no-undef": 2,
+		"no-dupe-keys": 2,
+		"no-empty-character-class": 2,
+		"no-self-compare": 2,
+		"valid-typeof": 2,
+		"no-unused-vars": 2,
+		"handle-callback-err": 2,
+		"no-shadow-restricted-names": 2,
+		"no-unreachable": 2,
+		"no-console": 2,
+		"no-irregular-whitespace": 2,
+
+		// stylistic errors
+		"no-spaced-func": 2,
+		"semi-spacing": 2,
+		"space-unary-ops": 2,
+		"brace-style": [2, "stroustrup", { "allowSingleLine": false }],
+		"default-case": 2,
+		"indent": [2, "tab", { "SwitchCase": 1 }],
+		"new-cap": 0, // for things like Immutable.Map()
+		"no-catch-shadow": 2,
+		"no-eq-null": 2,
+		"no-floating-decimal": 2,
+		"no-inline-comments": 0,
+		"no-nested-ternary": 2,
+		"no-param-reassign": 0,
+		"no-shadow": 0,
+		"no-throw-literal": 2,
+		"no-undefined": 2,
+		"no-void": 2,
+
+    	// Node.js
+		"no-restricted-modules": 2, // restrict usage of specified node modules (off by default)
+		"no-sync": 2,              // disallow use of synchronous methods (off by default)
+
+	}
+}

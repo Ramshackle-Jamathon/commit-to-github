@@ -1,15 +1,15 @@
 var GitHubApi = require("github");
+var debug = require("debug")("commit-to-github");  
 
 var getReferenceCommit = function (data){
 	return new Promise((resolve, reject) => {
-		console.log("Getting reference...");
 		data.github.gitdata.getReference({
 			user: data.user,
 			repo: data.repo,
 			ref: data.fullyQualifiedRef
 		}, (err, res) => {
 			if (err) {
-				console.error("getReferenceCommit", JSON.stringify(err, null, "  "));
+				debug("getReferenceCommit", JSON.stringify(err, null, "  "));
 				return reject(err);
 			}
 			return resolve(Object.assign(data, { referenceCommitSha :  res.object.sha}));
@@ -19,8 +19,6 @@ var getReferenceCommit = function (data){
 
 var createTree = function (data){
 	return new Promise((resolve, reject) => {
-		console.log("Creating tree...");
-
 		var files = [];
 		data.files.forEach((file) => {
 			if(typeof file.path === "string" && typeof file.content === "string"){
@@ -40,7 +38,7 @@ var createTree = function (data){
 			base_tree: data.referenceCommitSha
 		}, (err, res) => {
 			if (err) {
-				console.error("createTree", JSON.stringify(err, null, "  "));
+				debug("createTree", JSON.stringify(err, null, "  "));
 				return reject(err);
 			}
 			return resolve(Object.assign(data, { newTreeSha :  res.sha}));
@@ -50,7 +48,6 @@ var createTree = function (data){
 
 var createCommit = function (data){
 	return new Promise((resolve, reject) => {
-		console.log("Creating commit...");
 		data.github.gitdata.createCommit({
 			user: data.user,
 			repo: data.repo,
@@ -59,7 +56,7 @@ var createCommit = function (data){
 			parents: [data.referenceCommitSha]
 		}, (err, res) => {
 			if (err) {
-				console.error("createCommit", JSON.stringify(err, null, "  "));
+				debug("createCommit", JSON.stringify(err, null, "  "));
 				return reject(err);
 			}
 			return resolve(Object.assign(data, { newCommitSha :  res.sha}));
@@ -69,7 +66,6 @@ var createCommit = function (data){
 
 var updateRefrence = function (data){
 	return new Promise((resolve, reject) => {
-		console.log("Updating reference...");
 		data.github.gitdata.updateReference({
 			user: data.user,
 			repo: data.repo,
@@ -78,7 +74,7 @@ var updateRefrence = function (data){
 			force: data.forceUpdate,
 		}, (err, data) => {
 			if (err) {
-				console.error("updateRefrence", JSON.stringify(err, null, "  "));
+				debug("updateRefrence", JSON.stringify(err, null, "  "));
 				return reject(err);
 			}
 			return resolve(data);
