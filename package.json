@@ -21,6 +21,6 @@
   },
   "dependencies": {
     "debug": "^2.3.3",
-    "github": "^8.0.0"
+    "github": "^9.0.0"
   }
 }
