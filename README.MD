@@ -1,3 +1,5 @@
+** Deprecated ** use https://isomorphic-git.org/ instead
+
 # commit-to-github
 Uses the github API to make commits to github repos. lightweight and doesn't depend on Git.
 
